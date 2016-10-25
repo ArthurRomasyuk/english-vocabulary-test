@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="persistenceUnit">
+        <class>model.AnswersEntity</class>
+        <class>model.QuestionsEntity</class>
+        <class>model.TestreviewhistoryEntity</class>
+        <class>model.UserEntity</class>
+        <properties><!--смотри - нам нужно с тобой переключиться на другую базу
+         все делается здесь: в пределах этого конфига) то-есть меняя что-то внизу - верх ты не цепляешь
+         1 вопрос - а для демонстрации потом будет нормально, что здесь не внутренняя БД будет? если я хочу на
+         для собеседования на Git потом закинуть?  можешь просто закомментить н2 или реальзную базу и предоставить 2 варианта
+         + так как есть hbm2dfl-> а с h2 generated value вообще не функционирует? функционирует - можно просто поменять диалект и поставить
+         hbm2ddl -> valiadte, create -drop, чтобы схема сама разворачивалась (поменять ее тип на мемори, а не ембеддид)
+       так у меня мемори не совсем) у тебя она ембеддид - так как хранится на диске
+         мемори - этоя - ты видел где меняется)
+          да
+          я уже менял там вроде, оно может сбрасываться? да) схема каждый раз будет новой при таком подходе
+          т.е. generated value может заработать после того как поставлю ин мемори?
+          поменяешь диалект )
+          1 секунду, давай лучше комментить то что было, а не удалять
+         у меня просто часть команд не передается через клавиатуру) и все тормозит))))
+         давай просто продублируешь сетинги либо потом через историю посмотришь локальную
+         кликни сейчас правой кнопкой  и глазками найди локал хистори))) нужно в пом хмл будет добавить зависимость  сейчас красненький будет
+         -->
+            <property name="hibernate.connection.url" value="jdbc:h2:file:C:/db/user_test_db"/>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+            <property name="hibernate.connection.username" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.connection.password" value=""/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+        >
+<h:head>
+</h:head>
+<h:body>
+
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:form>
+                <h:form id="form2">
+                    <ace:dataTable id="testTable"
+                                   value="#{testBean.questionListMap.keySet().toArray()}"
+                                   var="question"
+                                   paginator="true"
+                                   rows="15">
+
+                        <ace:column headerText="ID">
+                            <h:outputText value="#{question.id}"/>
+                        </ace:column>
+
+                        <ace:column headerText="Description">
+                            <h:outputText value="#{question.questiondescription}"/>
+                        </ace:column>
+
+                        <ace:column headerText="Answer">
+                            <h:outputText value="#{question.userAnswer.answerdescription}"/>
+                        </ace:column>
+
+                    </ace:dataTable>
+                </h:form>
+            </h:form>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>

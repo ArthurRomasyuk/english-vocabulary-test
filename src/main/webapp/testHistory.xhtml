@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ace="http://www.icefaces.org/icefaces/components"
+>
+<h:head>
+</h:head>
+<h:body>
+
+    <h2>Your test history</h2>
+
+    <a href="/web/questionAnswerCard.xhtml">Take the test again!</a>
+
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:form>
+                <h:form id="form2">
+                    <ace:dataTable id="testTable"
+                                   value="#{dtBasicView.testreviewhistoryEntities}"
+                                   var="test"
+                                   paginator="true"
+                                   rows="50">
+
+                        <ace:column headerText="ID">
+                            <h:outputText value="#{test.id}"/>
+                        </ace:column>
+
+                        <ace:column headerText="Right answers">
+                            <h:outputText value="#{test.testansweredcountquestion}"/>
+                        </ace:column>
+
+                        <ace:column headerText="Wrong answers">
+                            <h:outputText value="#{test.testunanasweredcountquestion}"/>
+                        </ace:column>
+
+                    </ace:dataTable>
+                </h:form>
+            </h:form>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
